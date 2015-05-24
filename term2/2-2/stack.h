@@ -4,8 +4,9 @@ template <typename T>
 class Stack
 {
 public:
+    virtual ~Stack() {}
     ///Adds a new element with the value
-    virtual void push(T value) = 0;
+    virtual void push(const T &value) = 0;
     ///Gets and removes the top element
     virtual T pop() = 0;
     ///Gets the top element without removing it

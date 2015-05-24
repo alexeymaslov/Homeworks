@@ -7,7 +7,7 @@ class ArrayStack : public Stack<T>
 public:
     ArrayStack();
     ~ArrayStack();
-    void push(T value);
+    void push(const T &value);
     T pop();
     T peek();
     bool isEmpty();
@@ -45,7 +45,7 @@ void ArrayStack<T>::expandStack()
 }
 
 template <typename T>
-void ArrayStack<T>::push(T value)
+void ArrayStack<T>::push(const T &value)
 {
     topIndex++;
     if (topIndex == size)

@@ -14,7 +14,7 @@ class LinkedStack : public Stack<T>
 public:
     LinkedStack();
     ~LinkedStack();
-    void push(T value);
+    void push(const T &value);
     T pop();
     T peek();
     bool isEmpty();
@@ -57,7 +57,7 @@ int LinkedStack<T>::getSize()
 }
 
 template <typename T>
-void LinkedStack<T>::push(T value)
+void LinkedStack<T>::push(const T &value)
 {
     top->next = createLinkedStackElement(value, top->next);
     size++;

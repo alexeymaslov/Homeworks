@@ -65,6 +65,8 @@ double Calculator::getResult(char symbol, double digitOne, double digitTwo)
         return (digitOne * digitTwo);
     case '/':
         return (digitOne / digitTwo);
+    default:
+        return 0;
     }
 }
 
@@ -82,7 +84,7 @@ double Calculator::calculate(char* line)
     changeToPostfix(line);
     Stack<double>* doubleStack = new LinkedStack<double>();
 
-    for (int i = 0; i < strlen(line); i++)
+    for (int i = 0; (unsigned)i < strlen(line); i++)
     {
         if (isspace(line[i]))
             continue;
